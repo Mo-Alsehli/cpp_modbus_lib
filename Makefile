@@ -1,21 +1,20 @@
 CXX = g++
-CXXFLAGS = -std=c++17 -Wall -Wextra -g -Iinclude
+CXXFLAGS = -std=c++20 -Wall -Wextra -g -Iinclude
 
 SRC = $(wildcard src/*/*.cpp)
-OBJ = $(SRC:.cpp=.o)
+
+OBJ = $(patsubst src/%.cpp,build/%.o,$(SRC))
 
 LIB = build/libmodbus.a
 
-all: build $(LIB)
-
-build:
-mkdir -p build
+all: $(LIB)
 
 $(LIB): $(OBJ)
-ar rcs $@ $^
+	ar rcs $@ $^
 
-%.o: %.cpp
-$(CXX) $(CXXFLAGS) -c $< -o $@
+build/%.o: src/%.cpp
+	mkdir -p $(dir $@)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-rm -rf build src/*/*.o
+	rm -rf build
