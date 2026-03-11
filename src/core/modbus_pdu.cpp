@@ -25,7 +25,7 @@ size_t CPDU::serialize(std::span<uint8_t> buffer) const {
 
     buffer[0] = m_function_code;
 
-    std::copy(m_data.begin(), m_data.end(), buffer.size() + 1);
+    std::copy(m_data.begin(), m_data.end(), buffer.begin() + 1);
 
     return required_size;
 }
