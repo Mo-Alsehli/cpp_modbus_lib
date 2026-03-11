@@ -3,7 +3,7 @@
 #include <cstdint>
 #include <span>
 
-enum class ETransportError { None, Timeout, Disconnected, IOError };
+enum class ETransportError { None, Timeout, Disconnected, WriteError, IOError };
 
 class CTransport {
    public:
@@ -12,7 +12,7 @@ class CTransport {
     virtual ETransportError connect() = 0;
     virtual void close() = 0;
 
-    virtual ETransportError send(std::span<uint8_t> data) = 0;
+    virtual ETransportError send(std::span<const uint8_t> data) = 0;
 
     virtual ETransportError receive(std::span<uint8_t> data, size_t& received) = 0;
 };
