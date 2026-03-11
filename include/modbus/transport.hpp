@@ -14,5 +14,5 @@ class CTransport {
 
     virtual ETransportError send(std::span<uint8_t> data) = 0;
 
-    virtual ETransportError receive(std::span<uint8_t> data, size_t& received);
+    virtual ETransportError receive(std::span<uint8_t> data, size_t& received) = 0;
 };
