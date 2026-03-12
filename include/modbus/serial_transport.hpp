@@ -5,9 +5,9 @@
 #include "transport.hpp"
 
 // Wrapper for making system independant read/write.
-class CByteStream {
+class CIByteStream {
    public:
-    virtual ~CByteStream() = default;
+    virtual ~CIByteStream() = default;
 
     virtual size_t write(std::span<const uint8_t> data) const = 0;
     virtual size_t read(std::span<uint8_t> data) const = 0;
@@ -15,11 +15,11 @@ class CByteStream {
 
 class CRTUTransport : public CTransport {
    public:
-    CRTUTransport(CByteStream& byte_stream);
+    CRTUTransport(CIByteStream& byte_stream);
 
     ETransportError send(std::span<const uint8_t> data) override;
     ETransportError receive(std::span<uint8_t> data, size_t& received) override;
 
    private:
-    CByteStream& m_byte_stream;
+    CIByteStream& m_byte_stream;
 };
