@@ -14,8 +14,7 @@ CPDU CFunctionDispatcher::process(const CPDU& request, CRegisterMap& registers) 
     auto it = m_handlers.find(fc);
 
     if (it == m_handlers.end()) {
-        std::cerr << "[ERROR] Illegal Function" << std::endl;
-        return CPDU(fc | 0x80, {0x1});
+        return request.exception(request.get_function_code(), {0x1});
     }
 
     return it->second->handle(request, registers);

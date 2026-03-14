@@ -1,8 +1,8 @@
 #include "serial_transport.hpp"
 
-#include "modbus/transport.hpp"
+#include "transport.hpp"
 
-CRTUTransport::CRTUTransport(CByteStream& byte_stream) : m_byte_stream(byte_stream) {}
+CRTUTransport::CRTUTransport(CIByteStream& byte_stream) : m_byte_stream(byte_stream) {}
 
 ETransportError CRTUTransport::send(std::span<const uint8_t> data) {
     const size_t written = m_byte_stream.write(data);

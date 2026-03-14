@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++20 -Wall -Wextra -g -Iinclude/modbus
+CXXFLAGS = -std=c++20 -Wall -Wextra -g -Iinclude/modbus -Iinclude/modbus/function_codes
 
 SRC = $(wildcard src/*/*.cpp)
 
