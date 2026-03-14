@@ -17,6 +17,8 @@ class CRTUTransport : public CTransport {
    public:
     CRTUTransport(CIByteStream& byte_stream);
 
+    ETransportError connect() override;
+    void close() override;
     ETransportError send(std::span<const uint8_t> data) override;
     ETransportError receive(std::span<uint8_t> data, size_t& received) override;
 
