@@ -11,11 +11,11 @@ void CRegisterMap::write_coil(uint16_t address, bool value) { m_coils.at(address
 size_t CRegisterMap::get_coil_count() const { return m_coils.size(); }
 
 bool CRegisterMap::read_discrete_input(uint16_t address) const { return m_discrete_input.at(address); }
-size_t CRegisterMap::get_discrete_input_count(uint16_t address) const { return m_discrete_input.size(); }
+size_t CRegisterMap::get_discrete_input_count() const { return m_discrete_input.size(); }
 
 uint16_t CRegisterMap::read_holding_register(uint16_t address) const { return m_holding_registers.at(address); }
 void CRegisterMap::write_holding_register(uint16_t address, uint16_t value) { m_holding_registers.at(address) = value; }
-size_t CRegisterMap::get_holding_register_count(uint16_t address) const { return m_holding_registers.size(); }
+size_t CRegisterMap::get_holding_register_count() const { return m_holding_registers.size(); }
 
 uint16_t CRegisterMap::read_input_register(uint16_t address) const { return m_input_registers.at(address); }
-size_t CRegisterMap::get_input_register_count(uint16_t) const { return m_input_registers.size(); }
+size_t CRegisterMap::get_input_register_count() const { return m_input_registers.size(); }

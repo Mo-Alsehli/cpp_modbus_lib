@@ -10,14 +10,14 @@ class CRegisterMap {
     size_t get_coil_count() const;
 
     bool read_discrete_input(uint16_t address) const;
-    size_t get_discrete_input_count(uint16_t address) const;
+    size_t get_discrete_input_count() const;
 
     uint16_t read_holding_register(uint16_t address) const;
     void write_holding_register(uint16_t address, uint16_t value);
-    size_t get_holding_register_count(uint16_t address) const;
+    size_t get_holding_register_count() const;
 
     uint16_t read_input_register(uint16_t address) const;
-    size_t get_input_register_count(uint16_t) const;
+    size_t get_input_register_count() const;
 
    private:
     std::vector<bool> m_coils;

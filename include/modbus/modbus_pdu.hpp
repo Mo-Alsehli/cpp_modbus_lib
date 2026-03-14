@@ -15,6 +15,8 @@ class CPDU {
 
     uint8_t exception_code() const;
 
+    CPDU exception(uint8_t fc, uint8_t code) const;
+
     size_t serialize(std::span<uint8_t> buffer) const;
 
     static CPDU parse(std::span<uint8_t> bytes);

@@ -15,6 +15,8 @@ uint8_t CPDU::exception_code() const {
     return m_data[0];
 }
 
+CPDU CPDU::exception(uint8_t fc, uint8_t code) const { return CPDU(fc | 0x80, {code}); }
+
 size_t CPDU::serialize(std::span<uint8_t> buffer) const {
     size_t required_size = m_data.size() + 1;
 
