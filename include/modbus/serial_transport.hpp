@@ -9,8 +9,8 @@ class CIByteStream {
    public:
     virtual ~CIByteStream() = default;
 
-    virtual size_t write(std::span<const uint8_t> data) const = 0;
-    virtual size_t read(std::span<uint8_t> data) const = 0;
+    virtual size_t stream_write(std::span<const uint8_t> data) const = 0;
+    virtual size_t stream_read(std::span<uint8_t> data) = 0;
 };
 
 class CRTUTransport : public CTransport {
