@@ -2,7 +2,7 @@
 
 #include <span>
 
-#include "transport.hpp"
+#include "modbus/transport/transport.hpp"
 
 // Wrapper for making system independant read/write.
 class CIByteStream {

@@ -1,9 +1,9 @@
 #pragma once
 
-#include "function_dispatcher.hpp"
-#include "modbus_pdu.hpp"
-#include "register_map.hpp"
-#include "transport.hpp"
+#include "modbus/core/function_dispatcher.hpp"
+#include "modbus/core/modbus_pdu.hpp"
+#include "modbus/server/register_map.hpp"
+#include "modbus/transport/transport.hpp"
 
 class CModbusServer {
    public:

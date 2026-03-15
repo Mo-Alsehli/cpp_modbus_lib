@@ -1,4 +1,4 @@
-#include "modbus_pdu.hpp"
+#include "modbus/core/modbus_pdu.hpp"
 
 uint8_t CPDU::get_function_code() const { return m_function_code; }
 

@@ -1,6 +1,7 @@
-#include "modbus_server.hpp"
+#include "modbus/server/modbus_server.hpp"
 
-CModbusServer::CModbusServer(CTransport& transport, CRegisterMap& registers) : m_transport(transport), m_registers(registers){};
+CModbusServer::CModbusServer(CTransport& transport, CRegisterMap& registers)
+    : m_transport(transport), m_registers(registers), m_rx_buffer(256), m_tx_buffer(256) {}
 
 void CModbusServer::poll() {
     size_t received;

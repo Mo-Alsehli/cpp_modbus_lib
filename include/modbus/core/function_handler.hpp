@@ -1,7 +1,7 @@
 #pragma once
 
-#include "modbus_pdu.hpp"
-#include "register_map.hpp"
+#include "modbus/core/modbus_pdu.hpp"
+#include "modbus/server/register_map.hpp"
 
 class CIFunctionHandler {
    public:

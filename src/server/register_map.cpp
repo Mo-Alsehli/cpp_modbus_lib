@@ -1,4 +1,4 @@
-#include "register_map.hpp"
+#include "modbus/server/register_map.hpp"
 
 CRegisterMap::CRegisterMap(size_t coils_count, size_t discrete_input_count, size_t holding_register_count, size_t input_registers_count)
     : m_coils(coils_count, 0),

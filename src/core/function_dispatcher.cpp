@@ -1,7 +1,7 @@
-#include "function_dispatcher.hpp"
+#include "modbus/core/function_dispatcher.hpp"
 
-#include "read_holding_register_handler.hpp"
-#include "write_single_register_handler.hpp"
+#include "modbus/function_codes/read_holding_register_handler.hpp"
+#include "modbus/function_codes/write_single_register_handler.hpp"
 
 CFunctionDispatcher::CFunctionDispatcher() {
     m_handlers[0x03] = std::make_unique<CReadHoldingRegisterHandler>();

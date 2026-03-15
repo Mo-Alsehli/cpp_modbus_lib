@@ -1,4 +1,4 @@
-#include "write_single_register_handler.hpp"
+#include "modbus/function_codes/write_single_register_handler.hpp"
 
 CPDU CWriteSingleRegisterHandler::handle(const CPDU& request, CRegisterMap& registers) {
     auto data = request.get_data();

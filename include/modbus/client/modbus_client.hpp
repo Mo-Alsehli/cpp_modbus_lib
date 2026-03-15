@@ -2,8 +2,8 @@
 
 #include <cstdint>
 
-#include "modbus_pdu.hpp"
-#include "transport.hpp"
+#include "modbus/core/modbus_pdu.hpp"
+#include "modbus/transport/transport.hpp"
 
 class CModbusClient {
    public:

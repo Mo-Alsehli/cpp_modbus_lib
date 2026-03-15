@@ -1,6 +1,6 @@
-#include "serial_transport.hpp"
+#include "modbus/transport/serial_transport.hpp"
 
-#include "transport.hpp"
+#include "modbus/transport/transport.hpp"
 
 CRTUTransport::CRTUTransport(CIByteStream& byte_stream) : m_byte_stream(byte_stream) {}
 

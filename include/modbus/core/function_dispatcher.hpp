@@ -3,7 +3,7 @@
 #include <memory>
 #include <unordered_map>
 
-#include "function_handler.hpp"
+#include "modbus/core/function_handler.hpp"
 
 class CFunctionDispatcher {
    public:

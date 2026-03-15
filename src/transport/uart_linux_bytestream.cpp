@@ -1,4 +1,4 @@
-#include "uart_linux_bytestream.hpp"
+#include "modbus/transport/uart_linux_bytestream.hpp"
 
 CUARTByteStream::CUARTByteStream(const std::string& device) {
     m_fd = open(device.c_str(), O_RDWR | O_NOCTTY);

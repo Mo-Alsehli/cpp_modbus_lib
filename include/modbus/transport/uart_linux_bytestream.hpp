@@ -8,9 +8,9 @@
 #include <span>
 #include <string>
 
-#include "serial_transport.hpp"
+#include "modbus/transport/serial_transport.hpp"
 
-class CUARTByteStream : CIByteStream {
+class CUARTByteStream : public CIByteStream {
    public:
     CUARTByteStream(const std::string& device);
 

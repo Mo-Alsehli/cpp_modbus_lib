@@ -3,7 +3,7 @@
 #include <cstdint>
 #include <span>
 
-#include "modbus_pdu.hpp"
+#include "modbus/core/modbus_pdu.hpp"
 
 class CADU {
    public:

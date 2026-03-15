@@ -1,4 +1,4 @@
-#include "modbus_client.hpp"
+#include "modbus/client/modbus_client.hpp"
 
 CModbusClient::CModbusClient(CTransport& transport) : m_transport(transport) {}
 
