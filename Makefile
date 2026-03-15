@@ -1,5 +1,7 @@
 CXX = g++
-CXXFLAGS = -std=c++20 -Wall -Wextra -g -Iinclude/modbus -Iinclude/modbus/function_codes
+INCLUDE_DIRS := $(shell find include -type d)
+CPPFLAGS = $(addprefix -I,$(INCLUDE_DIRS))
+CXXFLAGS = -std=c++20 -Wall -Wextra -g $(CPPFLAGS)
 
 SRC = $(wildcard src/*/*.cpp)
 
