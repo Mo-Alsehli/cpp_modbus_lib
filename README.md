@@ -291,8 +291,11 @@ The examples demonstrate:
 ---
 
 # Demo Video (Running on Linux)
+# Demo Video
 
+Watch the demo here:
 
+[▶ Run the Modbus library demo](docs/modbus_cpp_demo.mp4)
 ---
 
 # Error Handling
