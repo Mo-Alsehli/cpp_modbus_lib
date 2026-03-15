@@ -151,7 +151,7 @@ build/
 
 ---
 
-# Running the Examples
+# Running the Examples (Linux Compatible)
 
 The example programs demonstrate a **Modbus RTU client and server communicating over virtual UART devices**.
 
@@ -290,7 +290,7 @@ The examples demonstrate:
 
 ---
 
-# Demo Video
+# Demo Video (Running on Linux)
 
 
 ---
