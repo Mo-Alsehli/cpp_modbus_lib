@@ -1,11 +1,19 @@
 #include "modbus/core/function_dispatcher.hpp"
 
+#include "modbus/function_codes/read_coils_handler.hpp"
 #include "modbus/function_codes/read_holding_register_handler.hpp"
+#include "modbus/function_codes/read_input_register_handler.hpp"
+#include "modbus/function_codes/write_multiple_registers_handler.hpp"
+#include "modbus/function_codes/write_single_coil_handler.hpp"
 #include "modbus/function_codes/write_single_register_handler.hpp"
 
 CFunctionDispatcher::CFunctionDispatcher() {
+    m_handlers[0x01] = std::make_unique<CReadCoilsHandler>();
     m_handlers[0x03] = std::make_unique<CReadHoldingRegisterHandler>();
+    m_handlers[0x04] = std::make_unique<CReadInputRegisterHandler>();
+    m_handlers[0x05] = std::make_unique<CWriteSingleCoilHandler>();
     m_handlers[0x06] = std::make_unique<CWriteSingleRegisterHandler>();
+    m_handlers[0x10] = std::make_unique<CWriteMultipleRegistersHandler>();
 }
 
 CPDU CFunctionDispatcher::process(const CPDU& request, CRegisterMap& registers) {
